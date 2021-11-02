@@ -31,9 +31,6 @@ missing_data <- gather(missing_data, key = "variables", value = "percent_missing
 ggplot(missing_data, aes(x = reorder(variables, percent_missing), y = percent_missing)) +xlab('variables')+
   geom_bar(stat = "identity", fill = "red", aes(color = I('white')), size = 0.3)+coord_flip()+ theme_bw()
 
-#
-options(repr.plot.width=8, repr.plot.height=6)
-
 #factorising variables for analysis
 data$year <- factor(data$year)
 data$countries <- factor(data$countries)
